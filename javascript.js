@@ -20,6 +20,7 @@ console.log(addBookToLibrary("slidjf", "slfj", 342, "not read"));
 //Checks to make sure myLibrary array is returned with the book objects pushed to it
 console.log(myLibrary);
 
+//Loops through array
 function loopMyLibrary() {
     for (let book of myLibrary) {
         console.log(book);
@@ -27,3 +28,12 @@ function loopMyLibrary() {
 }
 
 loopMyLibrary();
+
+//DOM Elements
+
+const cardContainer = document.querySelector(".card-container");
+
+const card = document.createElement("div");
+card.classList.add("book-card");
+card.textContent = "Test";
+cardContainer.appendChild(card);
