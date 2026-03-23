@@ -8,5 +8,8 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary(title, author, pages, read) {
-  new Book(title, author, pages, read);
+  myLibrary.push(new Book(title, author, pages, read));
+  return myLibrary;
 }
+
+console.log(addBookToLibrary("ldj", "sdf", 45, "read"));
