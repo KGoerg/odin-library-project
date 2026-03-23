@@ -19,3 +19,11 @@ console.log(addBookToLibrary("slidjf", "slfj", 342, "not read"));
 
 //Checks to make sure myLibrary array is returned with the book objects pushed to it
 console.log(myLibrary);
+
+function loopMyLibrary() {
+    for (let book of myLibrary) {
+        console.log(book);
+    }
+}
+
+loopMyLibrary();
