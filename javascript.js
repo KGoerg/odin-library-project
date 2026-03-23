@@ -12,4 +12,9 @@ function addBookToLibrary(title, author, pages, read) {
   return myLibrary;
 }
 
+//Checks to make sure addBookToLibrary is creating new books and pushing them to myLibrary array
 console.log(addBookToLibrary("ldj", "sdf", 45, "read"));
+console.log(addBookToLibrary("slidjf", "slfj", 342, "not read"));
+
+//Checks to make sure myLibrary array is returned with the book objects pushed to it
+console.log(myLibrary);
