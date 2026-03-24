@@ -28,9 +28,13 @@ const cardContainer = document.querySelector(".card-container");
 function loopMyLibrary() {
   let text = "";
     for (let book of myLibrary) {
+      //Creates card
         let card = document.createElement("div");
+        //Adds class to card
         card.classList.add("book-card");
+        //Adds current book text to card (CURRENT ISSUE: ADDS TEXT OF CURRENT ITEM IN ARRAY TO PREVIOUS ITERATIONS)
         card.textContent = text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
+        //Appends card to container parent
         cardContainer.appendChild(card);
     }
 }
