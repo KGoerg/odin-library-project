@@ -24,12 +24,14 @@ console.log(myLibrary);
 
 //Loops through array
 function loopMyLibrary() {
+  let text = "";
     for (let book of myLibrary) {
-        console.log(book);
+        text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
     }
+    return text;
 }
 
-loopMyLibrary();
+console.log(loopMyLibrary());
 
 //DOM Elements
 
