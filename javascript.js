@@ -22,22 +22,26 @@ addBookToLibrary("The Time Traveler's Wife", "Audrey Niffenegger", 518, "not yet
 //Checks to make sure myLibrary array is returned with the book objects pushed to it
 console.log(myLibrary);
 
+const cardContainer = document.querySelector(".card-container");
+
 //Loops through array
 function loopMyLibrary() {
   let text = "";
     for (let book of myLibrary) {
-        text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
+        let card = document.createElement("div");
+        card.classList.add("book-card");
+        card.textContent = text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
+        cardContainer.appendChild(card);
     }
-    return text;
 }
 
 console.log(loopMyLibrary());
 
-//DOM Elements
+// //DOM Elements
 
-const cardContainer = document.querySelector(".card-container");
+// const cardContainer = document.querySelector(".card-container");
 
-const card = document.createElement("div");
-card.classList.add("book-card");
-card.textContent = "Test";
-cardContainer.appendChild(card);
+// const card = document.createElement("div");
+// card.classList.add("book-card");
+// card.textContent = "Test";
+// cardContainer.appendChild(card);
