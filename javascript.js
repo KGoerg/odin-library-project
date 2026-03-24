@@ -24,7 +24,7 @@ console.log(myLibrary);
 
 const cardContainer = document.querySelector(".card-container");
 
-//Loops through array
+//Loops through array and displays book info in the DOM
 function loopMyLibrary() {
   let text = "";
     for (let book of myLibrary) {
@@ -32,8 +32,12 @@ function loopMyLibrary() {
         let card = document.createElement("div");
         //Adds class to card
         card.classList.add("book-card");
-        //Adds current book text to card (CURRENT ISSUE: ADDS TEXT OF CURRENT ITEM IN ARRAY TO PREVIOUS ITERATIONS)
+        //Adds current book text to card. If book text already exists, sets text to "" and adds current array item as text.
         card.textContent = text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
+        if (text != "") {
+          text = "";
+          card.textContent = text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
+        }
         //Appends card to container parent
         cardContainer.appendChild(card);
     }
