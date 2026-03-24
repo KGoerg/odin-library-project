@@ -14,8 +14,10 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 //Checks to make sure addBookToLibrary is creating new books and pushing them to myLibrary array
-console.log(addBookToLibrary("ldj", "sdf", 45, "read"));
-console.log(addBookToLibrary("slidjf", "slfj", 342, "not read"));
+console.log(addBookToLibrary("The Giver", "Lois Lowry", 225, "read"));
+console.log(addBookToLibrary("The Golden Compass", "Phillip Pullman", 416, "read"));
+console.log(addBookToLibrary("The Midnight Library", "Matt Haig", 288, "read"));
+console.log(addBookToLibrary("The Time Traveler's Wife", "Audrey Niffenegger", 518, "not yet read"));
 
 //Checks to make sure myLibrary array is returned with the book objects pushed to it
 console.log(myLibrary);
