@@ -58,11 +58,10 @@ addBookButton.addEventListener("click", () => {
     formButton.classList.add("form-element");
     document.body.appendChild(formButton);
     // Below didn't work. Need  to figure out how to get the third box, for number of pages, to become a number input type.
-    // if (i = 2) {
-    //   formInput.setAttribute("min", "1");
-    //   formInput.setAttribute("max", "3000");
-    // }
     formInput.setAttribute("type", "text");
+    if (i === 2) {
+      formInput.setAttribute("type", "number");
+    }
     formInput.classList.add("input-element");
 
     formContainer.appendChild(formInput);
@@ -70,3 +69,9 @@ addBookButton.addEventListener("click", () => {
   } 
   while (i <= 3);
 });
+
+// addBookButton.addEventListener("click", () => {
+//   for (let i = 0; i <= 3; i++) {
+//     if (i === 2)
+//   }
+// })
