@@ -51,9 +51,12 @@ const formContainer = document.querySelector(".form-container");
 const addBookButton = document.querySelector("button");
 addBookButton.addEventListener("click", () => {
   let formButton = document.createElement("form");
+  formButton.classList.add("form-element");
   document.body.appendChild(formButton);
+
   let formInput = document.createElement("input");
   formInput.setAttribute("type", "text");
+  formInput.classList.add("input-element");
 
   formContainer.appendChild(formInput);
 })
