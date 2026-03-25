@@ -18,6 +18,7 @@ addBookToLibrary("The Giver", "Lois Lowry", 225, "read");
 addBookToLibrary("The Golden Compass", "Phillip Pullman", 416, "read");
 addBookToLibrary("The Midnight Library", "Matt Haig", 288, "read");
 addBookToLibrary("The Time Traveler's Wife", "Audrey Niffenegger", 518, "not yet read");
+addBookToLibrary("A Court of Thorns and Roses", "Sarah J Maas", 448, "read");
 
 //Checks to make sure myLibrary array is returned with the book objects pushed to it
 console.log(myLibrary);
