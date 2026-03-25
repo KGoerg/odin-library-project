@@ -46,11 +46,14 @@ function loopMyLibrary() {
 
 console.log(loopMyLibrary());
 
-// //DOM Elements
+const formContainer = document.querySelector(".form-container");
 
-// const cardContainer = document.querySelector(".card-container");
+const addBookButton = document.querySelector("button");
+addBookButton.addEventListener("click", () => {
+  let formButton = document.createElement("form");
+  document.body.appendChild(formButton);
+  let formInput = document.createElement("input");
+  formInput.setAttribute("type", "text");
 
-// const card = document.createElement("div");
-// card.classList.add("book-card");
-// card.textContent = "Test";
-// cardContainer.appendChild(card);
+  formContainer.appendChild(formInput);
+})
