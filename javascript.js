@@ -50,6 +50,8 @@ const formContainer = document.querySelector(".form-container");
 
 const addBookButton = document.querySelector("button");
 
+const dialogBox = document.querySelector("dialog");
+
 addBookButton.addEventListener("click", () => {
   let i = 0;
   do {
@@ -63,11 +65,8 @@ addBookButton.addEventListener("click", () => {
       formInput.setAttribute("type", "number");
     }
     formInput.classList.add("input-element");
-    formContainer.appendChild(formInput);
+    dialogBox.appendChild(formInput);
     i++;
   } 
   while (i <= 3);
-  let submitButton = document.createElement("button");
-  submitButton.textContent = "Submit";
-  formContainer.appendChild(submitButton);
 });
