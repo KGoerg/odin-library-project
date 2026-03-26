@@ -46,36 +46,6 @@ function loopMyLibrary() {
 
 loopMyLibrary();
 
-const addBookButton = document.querySelector("button");
+const addNewBook = document.querySelector("button");
 const dialogBox = document.querySelector("dialog");
-// formFieldsCreated serves as a "flag variable", which helps control the flow of the createFormFields function.
-let formFieldsCreated = false;
-
-function createFormFields() {
-  let i = 0;
-  do {
-    let formCreateButton = document.createElement("form");
-    let formInput = document.createElement("input");
-    formCreateButton.classList.add("form-element");
-    document.body.appendChild(formCreateButton);
-
-    formInput.setAttribute("type", "text");
-    if (i === 2) {
-      formInput.setAttribute("type", "number");
-    }
-    formInput.classList.add("input-element");
-    dialogBox.appendChild(formInput);
-    i++;
-  } 
-  while (i <= 3);
-}
-
-addBookButton.addEventListener("click", () => {
-  // "If" statement basically says, "If the form fields are not created, go ahead and create them. Then, make a note that they've been created."
-  if (formFieldsCreated === false) {
-    createFormFields();
-    formFieldsCreated = true;
-  } else {
-    console.log("Fields already created")
-  }
-});
+const submitButton = document.querySelector("");
