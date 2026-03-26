@@ -257,3 +257,14 @@ img {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
 }
+
+dialog:open {
+	display: grid;
+	gap: 10px;
+	width: 300px;
+	height: 300px;
+}
+
+dialog button {
+	grid-row: 6 / 7;
+}
