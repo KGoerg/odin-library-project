@@ -52,7 +52,7 @@ const addBookButton = document.querySelector("button");
 
 const dialogBox = document.querySelector("dialog");
 
-addBookButton.addEventListener("click", () => {
+function createFormFields() {
   let i = 0;
   do {
     let formCreateButton = document.createElement("form");
@@ -69,4 +69,8 @@ addBookButton.addEventListener("click", () => {
     i++;
   } 
   while (i <= 3);
+}
+
+addBookButton.addEventListener("click", () => {
+  createFormFields();
 });
