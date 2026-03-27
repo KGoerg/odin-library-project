@@ -46,6 +46,21 @@ function loopMyLibrary() {
 
 loopMyLibrary();
 
-const addNewBook = document.querySelector("button");
 const dialogBox = document.querySelector("dialog");
-const submitButton = document.querySelector("");
+
+let formTitle = "";
+let formAuthor = "";
+let formPages;
+let formRead = "";
+
+const submitButton = document.querySelector('button[type="submit"]').addEventListener("click", function(event) {
+  event.preventDefault();
+  formTitle = document.getElementById("book_title").value;
+  console.log(formTitle);
+  formAuthor = document.getElementById("author_name").value;
+  console.log(formAuthor);
+  formPages = document.getElementById("number_pages").value;
+  console.log(formPages);
+  formRead = document.getElementById("read_status").value;
+  console.log(formRead);
+})
