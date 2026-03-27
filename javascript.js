@@ -26,7 +26,7 @@ console.log(myLibrary);
 const cardContainer = document.querySelector(".card-container");
 
 //Loops through array and displays book info in the DOM
-function loopMyLibrary() {
+function createBook() {
   let text = "";
     for (let book of myLibrary) {
       //Creates card
@@ -44,7 +44,7 @@ function loopMyLibrary() {
     }
 }
 
-loopMyLibrary();
+createBook();
 
 const dialogBox = document.querySelector("dialog");
 
@@ -64,7 +64,7 @@ const submitButton = document.querySelector('button[type="submit"]').addEventLis
   formRead = document.getElementById("read_status").value;
   console.log(formRead);
   addBookToLibrary(formTitle, formAuthor, formPages, "read");
-  loopMyLibrary();
+  createBook();
   myLibrary = [];
 })
 
