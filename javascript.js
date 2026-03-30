@@ -67,8 +67,17 @@ function createNewBook() {
     text = "";
     card.textContent = text += `${newBook.title} by ${newBook.author}, ${newBook.pages} pages, Status: ${newBook.read}. `;
   }
+  let readStatusButton = document.createElement("button");
+  let removeBookButton = document.createElement("button");
+  readStatusButton.classList.add("read-button");
+  readStatusButton.textContent="Toggle Read";
+  removeBookButton.classList.add("remove-button");
+  removeBookButton.textContent="Remove Book";
+
   //Appends card to container parent
   cardContainer.appendChild(card);
+  card.appendChild(readStatusButton);
+  card.appendChild(removeBookButton);
 }
 
 //Resets the form field after submitting
