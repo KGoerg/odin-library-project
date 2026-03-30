@@ -15,7 +15,7 @@ function addBookToLibrary(title, author, pages, read) {
 
 //Checks to make sure addBookToLibrary is creating new books and pushing them to myLibrary array
 addBookToLibrary("The Giver", "Lois Lowry", 225, "read");
-// addBookToLibrary("The Golden Compass", "Phillip Pullman", 416, "read");
+addBookToLibrary("The Golden Compass", "Phillip Pullman", 416, "read");
 // addBookToLibrary("The Midnight Library", "Matt Haig", 288, "read");
 // addBookToLibrary("The Time Traveler's Wife", "Audrey Niffenegger", 518, "not yet read");
 // addBookToLibrary("A Court of Thorns and Roses", "Sarah J Maas", 448, "read");
@@ -25,8 +25,8 @@ console.log(myLibrary);
 
 const cardContainer = document.querySelector(".card-container");
 
-//Loops through array and displays book info in the DOM
-function createBook() {
+//Loops through array and displays Placeholder book info in the DOM
+function createPlaceholderBooks() {
   let text = "";
     for (let book of myLibrary) {
       //Creates card
@@ -44,7 +44,23 @@ function createBook() {
     }
 }
 
-createBook();
+createPlaceholderBooks();
+
+function createNewBook() {
+  let newBook = myLibrary.slice(-1)[0];
+  let text = "";
+  let card = document.createElement("div");
+  //Adds class to card
+  card.classList.add("book-card");
+  //Adds current book text to card. If book text already exists, sets text to "" and adds current array item as text.
+  card.textContent = text += `${newBook.title} by ${newBook.author}, ${newBook.pages} pages, Status: ${newBook.read}. `;
+  if (text != "") {
+    text = "";
+    card.textContent = text += `${newBook.title} by ${newBook.author}, ${newBook.pages} pages, Status: ${newBook.read}. `;
+  }
+  //Appends card to container parent
+  cardContainer.appendChild(card);
+}
 
 const dialogBox = document.querySelector("dialog");
 
@@ -64,8 +80,7 @@ const submitButton = document.querySelector('button[type="submit"]').addEventLis
   formRead = document.getElementById("read_status").value;
   console.log(formRead);
   addBookToLibrary(formTitle, formAuthor, formPages, "read");
-  createBook();
-  myLibrary = [];
+  createNewBook();
+  console.log(myLibrary);
 })
 
-console.log(myLibrary);
