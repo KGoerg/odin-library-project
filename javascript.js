@@ -39,8 +39,12 @@ function createPlaceholderBooks() {
           text = "";
           card.textContent = text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
         }
+        //Create read checkbox in card div
+        let readButton = document.createElement("input");
+        readButton.type="checkbox";
         //Appends card to container parent
         cardContainer.appendChild(card);
+        card.appendChild(readButton);
     }
 }
 
