@@ -62,7 +62,11 @@ function createNewBook() {
   cardContainer.appendChild(card);
 }
 
-const dialogBox = document.querySelector("dialog");
+//Resets the form field after submitting
+const form = document.querySelector("form");
+form.addEventListener("submit", function() {
+  form.reset();
+});
 
 let formTitle = "";
 let formAuthor = "";
@@ -70,7 +74,6 @@ let formPages;
 let formRead = "";
 
 const submitButton = document.querySelector('button[type="submit"]').addEventListener("click", function(event) {
-  event.preventDefault();
   formTitle = document.getElementById("book_title").value;
   console.log(formTitle);
   formAuthor = document.getElementById("author_name").value;
@@ -83,4 +86,3 @@ const submitButton = document.querySelector('button[type="submit"]').addEventLis
   createNewBook();
   console.log(myLibrary);
 })
-
