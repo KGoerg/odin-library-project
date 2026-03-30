@@ -14,7 +14,7 @@
 
     <dialog id="my-dialog" closedby="any">
         <p>Add a book below:</p>
-        <form action="" method="get">
+        <form action="" method="dialog">
             <label for="book_title">Book Title</label>
             <input type="text" id="book_title" name="book_title">
 
@@ -25,7 +25,7 @@
             <input type="number" name="number_pages" id="number_pages" min="0" value="0">
 
             <div><label for="read_status" method="get">Have you read this book?</label>
-            <input type="checkbox" name="read_status" id="read_status" value="read"></div>
+            <input type="checkbox" name="read_status" id="read_status"></div>
             
             <button type="submit">Submit</button>
         </form>
