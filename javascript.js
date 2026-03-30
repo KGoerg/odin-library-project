@@ -68,10 +68,20 @@ form.addEventListener("submit", function() {
   form.reset();
 });
 
-let formTitle = "";
-let formAuthor = "";
+const checkbox = document.querySelector("input[type=checkbox]");
+
+function validateCheckbox() {
+  if (checkbox.checked === true) {
+    return "read";
+  } else {
+    return "unread";
+  }
+}
+
+let formTitle;
+let formAuthor;
 let formPages;
-let formRead = "";
+let formRead;
 
 const submitButton = document.querySelector('button[type="submit"]').addEventListener("click", function(event) {
   formTitle = document.getElementById("book_title").value;
@@ -80,9 +90,9 @@ const submitButton = document.querySelector('button[type="submit"]').addEventLis
   console.log(formAuthor);
   formPages = document.getElementById("number_pages").value;
   console.log(formPages);
-  formRead = document.getElementById("read_status").value;
+  formRead = validateCheckbox();
   console.log(formRead);
-  addBookToLibrary(formTitle, formAuthor, formPages, "read");
+  addBookToLibrary(formTitle, formAuthor, formPages, formRead);
   createNewBook();
   console.log(myLibrary);
 })
