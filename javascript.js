@@ -39,12 +39,17 @@ function createPlaceholderBooks() {
           text = "";
           card.textContent = text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
         }
-        //Create read checkbox in card div
-        let readButton = document.createElement("input");
-        readButton.type="checkbox";
+        //Creates Toggle Read and Remove Book buttons
+        let readStatusButton = document.createElement("button");
+        let removeBookButton = document.createElement("button");
+        readStatusButton.classList.add("read-button");
+        readStatusButton.textContent="Toggle Read";
+        removeBookButton.classList.add("remove-button");
+        removeBookButton.textContent="Remove Book";
         //Appends card to container parent
         cardContainer.appendChild(card);
-        card.appendChild(readButton);
+        card.appendChild(readStatusButton);
+        card.appendChild(removeBookButton);
     }
 }
 
