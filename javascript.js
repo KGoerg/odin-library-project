@@ -33,11 +33,25 @@ function createPlaceholderBooks() {
         let card = document.createElement("div");
         //Adds class to card
         card.classList.add("book-card");
-        //Adds current book text to card. If book text already exists, sets text to "" and adds current array item as text.
-        card.textContent = text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
+        let titleParagraph = document.createElement("p");
+        let authorParagraph = document.createElement("p");
+        let pagesParagraph = document.createElement("p");
+        let readParagraph = document.createElement("p");
+        titleParagraph.classList.add("card-paragraph");
+        authorParagraph.classList.add("card-paragraph");
+        pagesParagraph.classList.add("card-paragraph");
+        readParagraph.classList.add("card-paragraph");
+
+        titleParagraph.textContent = `Book Title: ${book.title}`;
+        authorParagraph.textContent = `Author: ${book.author}`; 
+        pagesParagraph.textContent = `Pages: ${book.pages}`;
+        readParagraph.textContent = `Status: ${book.read}`;
         if (text != "") {
           text = "";
-          card.textContent = text += `${book.title} by ${book.author}, ${book.pages} pages, Status: ${book.read}. `;
+          titleParagraph.textContent = text += `Book Title: ${book.title}`;
+          authorParagraph.textContent = text += `Author: ${book.author}`; 
+          pagesParagraph.textContent = text+= `Pages: ${book.pages}`;
+          readParagraph.textContent = text += `Status: ${book.read}. `;
         }
         //Creates Toggle Read and Remove Book buttons
         let readStatusButton = document.createElement("button");
@@ -46,11 +60,17 @@ function createPlaceholderBooks() {
         readStatusButton.textContent="Toggle Read";
         removeBookButton.classList.add("remove-button");
         removeBookButton.textContent="Remove Book";
+
         //Appends card to container parent
         cardContainer.appendChild(card);
+        card.appendChild(titleParagraph);
+        card.appendChild(authorParagraph);
+        card.appendChild(pagesParagraph);
+        card.appendChild(readParagraph);
         card.appendChild(readStatusButton);
         card.appendChild(removeBookButton);
     }
+  
 }
 
 createPlaceholderBooks();
@@ -61,12 +81,27 @@ function createNewBook() {
   let card = document.createElement("div");
   //Adds class to card
   card.classList.add("book-card");
+  let titleParagraph = document.createElement("p");
+  let authorParagraph = document.createElement("p");
+  let pagesParagraph = document.createElement("p");
+  let readParagraph = document.createElement("p");
+  titleParagraph.classList.add("card-paragraph");
+  authorParagraph.classList.add("card-paragraph");
+  pagesParagraph.classList.add("card-paragraph");
+  readParagraph.classList.add("card-paragraph");
   //Adds current book text to card. If book text already exists, sets text to "" and adds current array item as text.
-  card.textContent = text += `${newBook.title} by ${newBook.author}, ${newBook.pages} pages, Status: ${newBook.read}. `;
+  titleParagraph.textContent = `Book Title: ${newBook.title}`;
+  authorParagraph.textContent = `Author: ${newBook.author}`; 
+  pagesParagraph.textContent = `Pages: ${newBook.pages}`;
+  readParagraph.textContent = `Status: ${newBook.read}`;
   if (text != "") {
     text = "";
-    card.textContent = text += `${newBook.title} by ${newBook.author}, ${newBook.pages} pages, Status: ${newBook.read}. `;
+    titleParagraph.textContent = text += `Book Title: ${newBook.title}`;
+    authorParagraph.textContent = text += `Author: ${newBook.author}`; 
+    pagesParagraph.textContent = text+= `Pages: ${newBook.pages}`;
+    readParagraph.textContent = text += `Status: ${newBook.read}`;
   }
+  //Creates Toggle Read and Remove Book buttons
   let readStatusButton = document.createElement("button");
   let removeBookButton = document.createElement("button");
   readStatusButton.classList.add("read-button");
@@ -76,9 +111,13 @@ function createNewBook() {
 
   //Appends card to container parent
   cardContainer.appendChild(card);
+  card.appendChild(titleParagraph);
+  card.appendChild(authorParagraph);
+  card.appendChild(pagesParagraph);
+  card.appendChild(readParagraph);
   card.appendChild(readStatusButton);
   card.appendChild(removeBookButton);
-}
+    };
 
 //Resets the form field after submitting
 const form = document.querySelector("form");
