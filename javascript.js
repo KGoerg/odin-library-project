@@ -17,8 +17,6 @@ function addBookToLibrary(title, author, pages, read) {
 addBookToLibrary("The Giver", "Lois Lowry", 225, "read");
 addBookToLibrary("The Golden Compass", "Phillip Pullman", 416, "read");
 // addBookToLibrary("The Midnight Library", "Matt Haig", 288, "read");
-// addBookToLibrary("The Time Traveler's Wife", "Audrey Niffenegger", 518, "not yet read");
-// addBookToLibrary("A Court of Thorns and Roses", "Sarah J Maas", 448, "read");
 
 //Checks to make sure myLibrary array is returned with the book objects pushed to it
 console.log(myLibrary);
@@ -142,14 +140,9 @@ let formRead;
 
 const submitButton = document.querySelector('button[type="submit"]').addEventListener("click", function(event) {
   formTitle = document.getElementById("book_title").value;
-  console.log(formTitle);
   formAuthor = document.getElementById("author_name").value;
-  console.log(formAuthor);
   formPages = document.getElementById("number_pages").value;
-  console.log(formPages);
   formRead = validateCheckbox();
-  console.log(formRead);
   addBookToLibrary(formTitle, formAuthor, formPages, formRead);
   createNewBook();
-  console.log(myLibrary);
 })
