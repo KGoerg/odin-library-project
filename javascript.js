@@ -59,6 +59,12 @@ function createPlaceholderBooks() {
         removeBookButton.classList.add("remove-button");
         removeBookButton.textContent="Remove Book";
 
+        //Allows buttons to do things
+        readStatusButton.addEventListener("click", () => {
+          book.read === "read" ? book.read = "unread" : book.read = "read";
+          readParagraph.textContent = `Status: ${book.read}`;
+        })
+
         //Appends card to container parent
         cardContainer.appendChild(card);
         card.appendChild(titleParagraph);
@@ -106,6 +112,12 @@ function createNewBook() {
   readStatusButton.textContent="Toggle Read";
   removeBookButton.classList.add("remove-button");
   removeBookButton.textContent="Remove Book";
+
+//Allows buttons to do things
+  readStatusButton.addEventListener("click", () => {
+    newBook.read === "read" ? newBook.read = "unread" : newBook.read = "read";
+    readParagraph.textContent = `Status: ${newBook.read}`;
+  })
 
   //Appends card to container parent
   cardContainer.appendChild(card);
