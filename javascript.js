@@ -68,10 +68,11 @@ function createPlaceholderBooks() {
         })
 
         removeBookButton.addEventListener("click", () => {
-          let currentCardId = book.id;
+          let currentBookId = book.id;
+          console.log(currentBookId);
+          let currentCardId = card.getAttribute("data-id");
           console.log(currentCardId);
-          let index = myLibrary.findIndex(x => x.this === currentCardId);
-          console.log(index);
+
         })
 
         //Appends card to container parent
@@ -109,13 +110,7 @@ function createNewBook() {
   authorParagraph.textContent = `Author: ${newBook.author}`; 
   pagesParagraph.textContent = `Pages: ${newBook.pages}`;
   readParagraph.textContent = `Status: ${newBook.read}`;
-  if (text != "") {
-    text = "";
-    titleParagraph.textContent = text += `Book Title: ${newBook.title}`;
-    authorParagraph.textContent = text += `Author: ${newBook.author}`; 
-    pagesParagraph.textContent = text+= `Pages: ${newBook.pages}`;
-    readParagraph.textContent = text += `Status: ${newBook.read}`;
-  }
+
   //Creates Toggle Read and Remove Book buttons
   let readStatusButton = document.createElement("button");
   let removeBookButton = document.createElement("button");
