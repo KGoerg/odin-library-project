@@ -14,8 +14,8 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 //Checks to make sure addBookToLibrary is creating new books and pushing them to myLibrary array
-addBookToLibrary("The Giver", "Lois Lowry", 225, "read");
-addBookToLibrary("The Golden Compass", "Phillip Pullman", 416, "read");
+addBookToLibrary("The Giver", "Lois Lowry", 225, "Read");
+addBookToLibrary("The Golden Compass", "Phillip Pullman", 416, "Read");
 // addBookToLibrary("The Midnight Library", "Matt Haig", 288, "read");
 
 //Checks to make sure myLibrary array is returned with the book objects pushed to it
@@ -31,6 +31,8 @@ function createPlaceholderBooks() {
         let card = document.createElement("div");
         //Adds class to card
         card.classList.add("book-card");
+        card.setAttribute("data-id", book.id);
+        console.log(card);
         let titleParagraph = document.createElement("p");
         let authorParagraph = document.createElement("p");
         let pagesParagraph = document.createElement("p");
@@ -59,10 +61,17 @@ function createPlaceholderBooks() {
         removeBookButton.classList.add("remove-button");
         removeBookButton.textContent="Remove Book";
 
-        //Allows buttons to do things
+        //Allows card buttons to do things
         readStatusButton.addEventListener("click", () => {
-          book.read === "read" ? book.read = "unread" : book.read = "read";
+          book.read === "Read" ? book.read = "Unread" : book.read = "Read";
           readParagraph.textContent = `Status: ${book.read}`;
+        })
+
+        removeBookButton.addEventListener("click", () => {
+          let currentCardId = book.id;
+          console.log(currentCardId);
+          let index = myLibrary.findIndex(x => x.this === currentCardId);
+          console.log(index);
         })
 
         //Appends card to container parent
@@ -85,6 +94,8 @@ function createNewBook() {
   let card = document.createElement("div");
   //Adds class to card
   card.classList.add("book-card");
+  card.setAttribute("data-id", newBook.id);
+  console.log(card);
   let titleParagraph = document.createElement("p");
   let authorParagraph = document.createElement("p");
   let pagesParagraph = document.createElement("p");
@@ -113,9 +124,9 @@ function createNewBook() {
   removeBookButton.classList.add("remove-button");
   removeBookButton.textContent="Remove Book";
 
-//Allows buttons to do things
+//Allows card buttons to do things
   readStatusButton.addEventListener("click", () => {
-    newBook.read === "read" ? newBook.read = "unread" : newBook.read = "read";
+    newBook.read === "Read" ? newBook.read = "Unread" : newBook.read = "Read";
     readParagraph.textContent = `Status: ${newBook.read}`;
   })
 
@@ -127,7 +138,7 @@ function createNewBook() {
   card.appendChild(readParagraph);
   card.appendChild(readStatusButton);
   card.appendChild(removeBookButton);
-    };
+};
 
 //Resets the form field after submitting
 const form = document.querySelector("form");
@@ -139,9 +150,9 @@ const checkbox = document.querySelector("input[type=checkbox]");
 
 function validateCheckbox() {
   if (checkbox.checked === true) {
-    return "read";
+    return "Read";
   } else {
-    return "unread";
+    return "Unread";
   }
 }
 
