@@ -70,9 +70,13 @@ function createPlaceholderBooks() {
         removeBookButton.addEventListener("click", () => {
           let currentBookId = book.id;
           console.log(currentBookId);
-          let currentCardId = card.getAttribute("data-id");
+          let currentCardId = card.dataset.id;
           console.log(currentCardId);
-
+          //Gets index of current book card and splices it from the array!
+          let index = myLibrary.findIndex(book => book.id === currentBookId);
+          console.log(index);
+          myLibrary.splice(index, 1);
+          console.log(myLibrary);
         })
 
         //Appends card to container parent
@@ -125,6 +129,18 @@ function createNewBook() {
     readParagraph.textContent = `Status: ${newBook.read}`;
   })
 
+  removeBookButton.addEventListener("click", () => {
+    let currentBookId = newBook.id;
+    console.log(currentBookId);
+    let currentCardId = card.dataset.id;
+    console.log(currentCardId);
+    //Gets index of current book card and splices it from the array!
+    let index = myLibrary.findIndex(book => book.id === currentBookId);
+    console.log(index);
+    myLibrary.splice(index, 1);
+    console.log(myLibrary);
+  })
+
   //Appends card to container parent
   cardContainer.appendChild(card);
   card.appendChild(titleParagraph);
@@ -163,4 +179,5 @@ const submitButton = document.querySelector('button[type="submit"]').addEventLis
   formRead = validateCheckbox();
   addBookToLibrary(formTitle, formAuthor, formPages, formRead);
   createNewBook();
+  console.log(myLibrary);
 })
