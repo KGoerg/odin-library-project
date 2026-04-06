@@ -61,7 +61,7 @@ function createNewBook() {
 //Allows card buttons to do things
   readStatusButton.addEventListener("click", () => {
     newBook.read === "Read" ? newBook.read = "Unread" : newBook.read = "Read";
-    read.textContent = `Status: ${newBook.read}`;
+    readContent.textContent = newBook.read;
     console.log(myLibrary);
   })
 
