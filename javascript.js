@@ -13,89 +13,10 @@ function addBookToLibrary(title, author, pages, read) {
   return myLibrary;
 }
 
-//Checks to make sure addBookToLibrary is creating new books and pushing them to myLibrary array
-addBookToLibrary("The Giver", "Lois Lowry", 225, "Read");
-addBookToLibrary("The Golden Compass", "Phillip Pullman", 416, "Read");
-// addBookToLibrary("The Midnight Library", "Matt Haig", 288, "read");
-
-//Checks to make sure myLibrary array is returned with the book objects pushed to it
-console.log(myLibrary);
-
 const cardContainer = document.querySelector(".card-container");
-
-//Loops through array and displays Placeholder book info in the DOM
-function createPlaceholderBooks() {
-  let text = "";
-    for (let book of myLibrary) {
-      //Creates card
-        let card = document.createElement("div");
-        //Adds class to card
-        card.classList.add("book-card");
-        card.setAttribute("data-id", book.id);
-        console.log(card);
-        let titleParagraph = document.createElement("p");
-        let authorParagraph = document.createElement("p");
-        let pagesParagraph = document.createElement("p");
-        let readParagraph = document.createElement("p");
-        titleParagraph.classList.add("card-paragraph");
-        authorParagraph.classList.add("card-paragraph");
-        pagesParagraph.classList.add("card-paragraph");
-        readParagraph.classList.add("card-paragraph");
-
-        titleParagraph.textContent = `Book Title: ${book.title}`;
-        authorParagraph.textContent = `Author: ${book.author}`; 
-        pagesParagraph.textContent = `Pages: ${book.pages}`;
-        readParagraph.textContent = `Status: ${book.read}`;
-        if (text != "") {
-          text = "";
-          titleParagraph.textContent = text += `Book Title: ${book.title}`;
-          authorParagraph.textContent = text += `Author: ${book.author}`; 
-          pagesParagraph.textContent = text+= `Pages: ${book.pages}`;
-          readParagraph.textContent = text += `Status: ${book.read}. `;
-        }
-        //Creates Toggle Read and Remove Book buttons
-        let readStatusButton = document.createElement("button");
-        let removeBookButton = document.createElement("button");
-        readStatusButton.classList.add("read-button");
-        readStatusButton.textContent="Toggle Read";
-        removeBookButton.classList.add("remove-button");
-        removeBookButton.textContent="Remove Book";
-
-        //Allows card buttons to do things
-        readStatusButton.addEventListener("click", () => {
-          book.read === "Read" ? book.read = "Unread" : book.read = "Read";
-          readParagraph.textContent = `Status: ${book.read}`;
-        })
-
-        removeBookButton.addEventListener("click", () => {
-          let currentBookId = book.id;
-          console.log(currentBookId);
-          let currentCardId = card.dataset.id;
-          console.log(currentCardId);
-          //Gets index of current book card and splices it from the array!
-          let index = myLibrary.findIndex(book => book.id === currentBookId);
-          console.log(index);
-          myLibrary.splice(index, 1);
-          console.log(myLibrary);
-        })
-
-        //Appends card to container parent
-        cardContainer.appendChild(card);
-        card.appendChild(titleParagraph);
-        card.appendChild(authorParagraph);
-        card.appendChild(pagesParagraph);
-        card.appendChild(readParagraph);
-        card.appendChild(readStatusButton);
-        card.appendChild(removeBookButton);
-    }
-  
-}
-
-createPlaceholderBooks();
 
 function createNewBook() {
   let newBook = myLibrary.slice(-1)[0];
-  let text = "";
   let card = document.createElement("div");
   //Adds class to card
   card.classList.add("book-card");
@@ -109,7 +30,7 @@ function createNewBook() {
   authorParagraph.classList.add("card-paragraph");
   pagesParagraph.classList.add("card-paragraph");
   readParagraph.classList.add("card-paragraph");
-  //Adds current book text to card. If book text already exists, sets text to "" and adds current array item as text.
+  //Adds current book text to card.
   titleParagraph.textContent = `Book Title: ${newBook.title}`;
   authorParagraph.textContent = `Author: ${newBook.author}`; 
   pagesParagraph.textContent = `Pages: ${newBook.pages}`;
@@ -127,6 +48,7 @@ function createNewBook() {
   readStatusButton.addEventListener("click", () => {
     newBook.read === "Read" ? newBook.read = "Unread" : newBook.read = "Read";
     readParagraph.textContent = `Status: ${newBook.read}`;
+    console.log(myLibrary);
   })
 
   removeBookButton.addEventListener("click", () => {
@@ -139,6 +61,10 @@ function createNewBook() {
     console.log(index);
     myLibrary.splice(index, 1);
     console.log(myLibrary);
+
+    if (card.dataset.id === currentBookId) {
+      card.parentNode.removeChild(card);
+    }
   })
 
   //Appends card to container parent
@@ -166,11 +92,6 @@ function validateCheckbox() {
     return "Unread";
   }
 }
-
-let formTitle;
-let formAuthor;
-let formPages;
-let formRead;
 
 const submitButton = document.querySelector('button[type="submit"]').addEventListener("click", function(event) {
   formTitle = document.getElementById("book_title").value;
