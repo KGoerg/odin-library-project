@@ -258,6 +258,8 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
+	grid-row: 3;
+	grid-column: 1 / 4;
 }
 
 dialog:open {
@@ -281,6 +283,24 @@ h1 {
 	background-color: rgb(125, 146, 163);
 	text-align: center;
 	color: #FAFAFA;
+	grid-column: 1 / 4;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto 100px 1fr;
+	height: 100vh;
+}
+
+#add-new-book {
+	background: rgb(125, 146, 163);
+	height: 50px;
+	width: 200px;
+	color: #FAFAFA;
+	border: none;
+	border-radius: 80px;
+	grid-row: 2;
 }
 
 .instructions {
