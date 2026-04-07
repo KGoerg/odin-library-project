@@ -303,6 +303,14 @@ body {
 	grid-row: 2;
 }
 
+#add-new-book:hover {
+	background: rgb(112, 131, 146);
+}
+
+#add-new-book:active {
+	background: rgb(147, 171, 190);
+}
+
 .instructions {
 	background-color: rgb(146, 168, 187);
 	display: flex;
