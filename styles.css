@@ -260,6 +260,7 @@ img {
     grid-template-rows: auto;
 	grid-row: 3;
 	grid-column: 1 / 4;
+	background-color: #FAFAFA;
 }
 
 dialog:open {
@@ -284,13 +285,15 @@ h1 {
 	text-align: center;
 	color: #FAFAFA;
 	grid-column: 1 / 4;
+	box-shadow: 3px 3px 4px grey;
 }
 
 body {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: auto 100px 1fr;
+	grid-template-rows: auto auto 1fr;
 	height: 100vh;
+	background: rgb(234, 240, 245);
 }
 
 #add-new-book {
@@ -299,8 +302,13 @@ body {
 	width: 200px;
 	color: #FAFAFA;
 	border: none;
-	border-radius: 80px;
+	border-radius: 20px;
 	grid-row: 2;
+	grid-column: 2;
+	justify-self: center;
+	margin: 20px 0 20px 0;
+	font-weight: bold;
+	box-shadow: 3px 3px 4px grey;
 }
 
 #add-new-book:hover {
