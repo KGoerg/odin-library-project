@@ -247,20 +247,36 @@ img {
 }
 
 /* Page-specific code begins */
-.book-card {
-    border: 2px solid red;
-}
-
 .card-container {
     width: auto;
 	height: auto;
-	border: 2px solid green;
+	border: 4.5px solid rgb(125, 146, 163);
+	border-radius: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: auto;
 	grid-row: 3;
 	grid-column: 1 / 4;
-	background-color: #FAFAFA;
+	background-color: rgb(146, 168, 187);
+	margin: 0 50px 50px 50px;
+}
+
+.book-card {
+    border: 3px solid rgb(125, 146, 163);
+	border-radius: 30px;
+	padding: 20px;
+	font-size: 1.2rem;
+	text-align: center;
+	margin: 10px;
+	background: #FAFAFA;
+}
+
+.book-card p {
+	margin-bottom: 10px;
+}
+
+.card-buttons {
+	background: rgb(125, 146, 163); 
 }
 
 dialog:open {
@@ -286,6 +302,18 @@ h1 {
 	color: #FAFAFA;
 	grid-column: 1 / 4;
 	box-shadow: 3px 3px 4px grey;
+}
+
+.instructions {
+	background-color: rgb(146, 168, 187);
+	display: flex;
+	justify-content: center;
+	font-size: 1.5rem;
+}
+
+.header p {
+	background-color: rgb(146, 168, 187);
+	width: 1000px;
 }
 
 body {
@@ -317,18 +345,6 @@ body {
 
 #add-new-book:active {
 	background: rgb(147, 171, 190);
-}
-
-.instructions {
-	background-color: rgb(146, 168, 187);
-	display: flex;
-	justify-content: center;
-	font-size: 1.5rem;
-}
-
-.header p {
-	background-color: rgb(146, 168, 187);
-	width: 1000px;
 }
 
 .card-header {
