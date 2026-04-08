@@ -275,8 +275,21 @@ img {
 	margin-bottom: 10px;
 }
 
-.card-buttons {
+.card-button {
 	background: rgb(125, 146, 163); 
+	font-weight: bold;
+	color: white;
+	margin: 5px;
+	font-size: 1rem;
+	height: 40px;
+	width: 150px;
+	border: none;
+	border-radius: 30px;
+	padding: 5px;
+}
+
+.card-button + button {
+	background: darkred;
 }
 
 dialog:open {
