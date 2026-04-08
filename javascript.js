@@ -53,9 +53,9 @@ function createNewBook() {
   //Creates Toggle Read and Remove Book buttons
   let readStatusButton = document.createElement("button");
   let removeBookButton = document.createElement("button");
-  readStatusButton.classList.add("read-button");
+  readStatusButton.classList.add("card-button");
   readStatusButton.textContent="Toggle Status";
-  removeBookButton.classList.add("remove-button");
+  removeBookButton.classList.add("card-button");
   removeBookButton.textContent="Remove Book";
 
 //Allows card buttons to do things
