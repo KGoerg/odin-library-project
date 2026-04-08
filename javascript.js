@@ -30,20 +30,20 @@ function createNewBook() {
   author.classList.add("card-header");
   pages.classList.add("card-header");
   read.classList.add("card-header");
-  let titleContent = document.createElement("span");
-  let authorContent = document.createElement("span");
-  let pagesContent = document.createElement("span");
-  let readContent = document.createElement("span");
+  let titleContent = document.createElement("div");
+  let authorContent = document.createElement("div");
+  let pagesContent = document.createElement("div");
+  let readContent = document.createElement("div");
   titleContent.classList.add("card-content");
   authorContent.classList.add("card-content");
   pagesContent.classList.add("card-content");
   readContent.classList.add("card-content");
 
   //Adds current book text to card.
-  title.textContent = "Book Title: "
-  author.textContent = "Author: "
-  pages.textContent = "Pages: "
-  read.textContent = "Status: "
+  title.textContent = "Book Title"
+  author.textContent = "Author"
+  pages.textContent = "Pages"
+  read.textContent = "Status"
 
   titleContent.textContent = newBook.title;
   authorContent.textContent = newBook.author;
