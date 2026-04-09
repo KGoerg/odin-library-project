@@ -281,7 +281,7 @@ img {
 
 .card-button {
 	background: rgb(125, 146, 163); 
-	font-weight: bold;
+	font-weight: 500;
 	color: white;
 	margin: 5px;
 	font-size: 1rem;
@@ -313,14 +313,53 @@ img {
 }
 
 dialog:open {
-	display: grid;
 	gap: 10px;
-	width: 300px;
-	height: 300px;
+	width: 400px;
+	height: 500px;
+	padding: 40px;
+	border: none;
+	border-radius: 20px;
 }
 
-dialog button {
-	grid-row: 6 / 7;
+label {
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+input {
+	margin-bottom: 10px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 1.2rem;
+	margin-top: 30px;
+}
+
+dialog:open p {
+	font-weight: 500;
+	font-size: 1.4rem;
+}
+
+dialog:open button {
+	width: 200px;
+	margin-top: 50px;
+	border-radius: 30px;
+	background: rgb(125, 146, 163);
+	color: #FAFAFA;
+	font-weight: 500;
+	height: 40px;
+	border: none;
+}
+
+dialog:open button:hover {
+	background: rgb(112, 131, 146);
+}
+
+dialog:open button:active {
+	background: rgb(147, 171, 190);
 }
 
 h1 {
@@ -360,9 +399,9 @@ body {
 	height: 100vh;
 	background: rgb(234, 240, 245);
 	font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+  	font-optical-sizing: auto;
+  	font-weight: <weight>;
+  	font-style: normal;
 }
 
 #add-new-book {
@@ -371,12 +410,12 @@ body {
 	width: 200px;
 	color: #FAFAFA;
 	border: none;
-	border-radius: 20px;
+	border-radius: 30px;
 	grid-row: 2;
 	grid-column: 2;
 	justify-self: center;
 	margin: 20px 0 20px 0;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 #add-new-book:hover {
