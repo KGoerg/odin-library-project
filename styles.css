@@ -154,6 +154,7 @@ button,
 [type='reset'],
 [type='submit'] {
 	-webkit-appearance: button;
+box-shadow: 3px 3px 4px grey;
 }
 
 /**
@@ -290,8 +291,24 @@ img {
 	padding: 5px;
 }
 
+.card-button:hover {
+	background: rgb(112, 131, 146);
+}
+
+.card-button:active {
+	background: rgb(147, 171, 190);
+}
+
 .card-button + button {
 	background: darkred;
+}
+
+.card-button +button:hover {
+	background: rgb(117, 2, 2);
+}
+
+.card-button + button:active {
+	background: rgb(196, 51, 51);
 }
 
 dialog:open {
@@ -314,7 +331,7 @@ h1 {
 	flex-direction: column;
 	background-color: rgb(125, 146, 163);
 	text-align: center;
-	color: #FAFAFA;`
+	color: #FAFAFA;
 	grid-column: 1 / 4;
 	box-shadow: 3px 3px 4px grey;
 }
@@ -351,7 +368,6 @@ body {
 	justify-self: center;
 	margin: 20px 0 20px 0;
 	font-weight: bold;
-	box-shadow: 3px 3px 4px grey;
 }
 
 #add-new-book:hover {
