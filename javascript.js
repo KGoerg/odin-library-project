@@ -80,7 +80,7 @@ function createNewBook() {
     myLibrary.splice(index, 1);
     console.log(myLibrary);
 
-    if (card.dataset.id === currentBookId) {
+    if (currentCardId === currentBookId) {
       card.parentNode.removeChild(card);
     }
   })
@@ -122,7 +122,11 @@ const submitButton = document.querySelector('button[type="submit"]').addEventLis
   formAuthor = document.getElementById("author_name").value;
   formPages = document.getElementById("number_pages").value;
   formRead = validateCheckbox();
+  if (formTitle === "" || formAuthor === "" || formPages === "") {
+    submitButton.disabled = true;
+  } else {
   addBookToLibrary(formTitle, formAuthor, formPages, formRead);
   createNewBook();
   console.log(myLibrary);
+  }
 })
