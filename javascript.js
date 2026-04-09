@@ -22,6 +22,10 @@ function createNewBook() {
   card.classList.add("book-card");
   card.setAttribute("data-id", newBook.id);
   console.log(card);
+  let bookInfoContainer = document.createElement("div");
+  bookInfoContainer.classList.add("book-info-container");
+  let cardButtonContainer = document.createElement("div");
+  cardButtonContainer.classList.add("card-button-container");
   let title = document.createElement("p");
   let author = document.createElement("p");
   let pages = document.createElement("p");
@@ -83,12 +87,14 @@ function createNewBook() {
 
   //Appends card to container parent
   cardContainer.appendChild(card);
-  card.appendChild(title);
-  card.appendChild(author);
-  card.appendChild(pages);
-  card.appendChild(read);
-  card.appendChild(readStatusButton);
-  card.appendChild(removeBookButton);
+  card.appendChild(bookInfoContainer);
+  card.appendChild(cardButtonContainer);
+  bookInfoContainer.appendChild(title);
+  bookInfoContainer.appendChild(author);
+  bookInfoContainer.appendChild(pages);
+  bookInfoContainer.appendChild(read);
+  cardButtonContainer.appendChild(readStatusButton);
+  cardButtonContainer.appendChild(removeBookButton);
   title.appendChild(titleContent);
   author.appendChild(authorContent);
   pages.appendChild(pagesContent);
