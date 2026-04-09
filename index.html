@@ -6,25 +6,28 @@
     <title>Your Library</title>
     <script src="./javascript.js" defer></script>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="header">
         <h1>Your Library</h1>
         <div class="instructions"><p>Books will appear in your library after clicking the "Add New Book" button. You can store book titles, authors, page count, and whether or not you have read it.</p></div>
     </div>
-    <button command="show-modal" commandfor="my-dialog">Add New Book</button>
+    <button command="show-modal" id="add-new-book" commandfor="my-dialog">Add New Book</button>
 
     <dialog id="my-dialog" closedby="any">
         <p>Add a book below:</p>
         <form action="" method="dialog">
             <label for="book_title">Book Title</label>
-            <input type="text" id="book_title" name="book_title">
+            <input type="text" id="book_title" name="book_title" required>
 
             <label for="author_name" method="get">Author</label>
-            <input type="text" id="author_name" name="author_name">
+            <input type="text" id="author_name" name="author_name" required>
 
             <label for="number_pages" method="get">Number of Pages</label>
-            <input type="number" name="number_pages" id="number_pages" min="0" value="0">
+            <input type="number" name="number_pages" id="number_pages" min="0" placeholder ="0" required>
 
             <div><label for="read_status" method="get">Have you read this book?</label>
             <input type="checkbox" name="read_status" id="read_status"></div>
