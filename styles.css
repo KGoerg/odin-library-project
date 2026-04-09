@@ -250,7 +250,6 @@ img {
 .card-container {
     width: auto;
 	height: auto;
-	border: 4.5px solid rgb(125, 146, 163);
 	border-radius: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -263,7 +262,6 @@ img {
 }
 
 .book-card {
-    border: 3px solid rgb(125, 146, 163);
 	border-radius: 30px;
 	padding: 20px;
 	font-size: 1.2rem;
