@@ -268,6 +268,9 @@ img {
 	text-align: center;
 	margin: 10px;
 	background: #FAFAFA;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .book-card p {
@@ -311,7 +314,7 @@ h1 {
 	flex-direction: column;
 	background-color: rgb(125, 146, 163);
 	text-align: center;
-	color: #FAFAFA;
+	color: #FAFAFA;`
 	grid-column: 1 / 4;
 	box-shadow: 3px 3px 4px grey;
 }
