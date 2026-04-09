@@ -258,7 +258,6 @@ img {
 	grid-auto-rows: 1fr;
 	grid-row: 3;
 	grid-column: 1 / 4;
-	background-color: rgb(146, 168, 187);
 	margin: 0 50px 50px 50px;
 }
 
@@ -272,6 +271,8 @@ img {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	box-shadow: 
+	-2px 2px 5px rgb(90, 90, 90);
 }
 
 .book-card p {
@@ -324,6 +325,10 @@ dialog button {
 
 h1 {
 	font-size: 2.5rem;
+	font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 .header {
@@ -340,7 +345,7 @@ h1 {
 	background-color: rgb(146, 168, 187);
 	display: flex;
 	justify-content: center;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 .header p {
@@ -354,6 +359,10 @@ body {
 	grid-template-rows: auto auto 1fr;
 	height: 100vh;
 	background: rgb(234, 240, 245);
+	font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 #add-new-book {
