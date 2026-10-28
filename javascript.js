@@ -103,23 +103,38 @@ function createNewBook() {
   read.appendChild(readContent);
 };
 
-//Resets the form field after submitting
+const formTitle = document.getElementById("book_title");
+const formAuthor = document.getElementById("author_name");
+const formPages = document.getElementById("number_pages");
+
 const form = document.querySelector("form");
 form.addEventListener("submit", function(event) {
-  formTitle = document.getElementById("book_title").value;
-  formAuthor = document.getElementById("author_name").value;
-  formPages = document.getElementById("number_pages").value;
   formRead = validateCheckbox();
-  if (formTitle === "" || formAuthor === "" || formPages === "") {
+  if (formTitle.value === "" || formAuthor.value === "" || formPages.value === "") {
     submitButton.disabled = true;
   } else {
-  addBookToLibrary(formTitle, formAuthor, formPages, formRead);
+  addBookToLibrary(formTitle.value, formAuthor.value, formPages.value, formRead);
   createNewBook();
   console.log(myLibrary);
   }
   form.reset();
-  form.close();
 });
+
+//Form Validitiy
+
+function showTitleError() {
+  formTitle.setCustomValidity("");
+
+  if (formTitle.validity.valueMissing) {
+    formTitle.setCustomValidity("Please enter a book title.");
+  }
+}
+
+formTitle.addEventListener("input", () => {
+  if (!formTitle.validity.valid) {
+    showTitleError();
+  }
+})
 
 const checkbox = document.querySelector("input[type=checkbox]");
 
