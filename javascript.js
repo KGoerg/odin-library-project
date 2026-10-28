@@ -105,21 +105,7 @@ function createNewBook() {
 
 //Resets the form field after submitting
 const form = document.querySelector("form");
-form.addEventListener("submit", function() {
-  form.reset();
-});
-
-const checkbox = document.querySelector("input[type=checkbox]");
-
-function validateCheckbox() {
-  if (checkbox.checked === true) {
-    return "Read";
-  } else {
-    return "Unread";
-  }
-}
-
-const submitButton = document.querySelector('button[type="submit"]').addEventListener("click", function(event) {
+form.addEventListener("submit", function(event) {
   formTitle = document.getElementById("book_title").value;
   formAuthor = document.getElementById("author_name").value;
   formPages = document.getElementById("number_pages").value;
@@ -131,4 +117,16 @@ const submitButton = document.querySelector('button[type="submit"]').addEventLis
   createNewBook();
   console.log(myLibrary);
   }
-})
+  form.reset();
+  form.close();
+});
+
+const checkbox = document.querySelector("input[type=checkbox]");
+
+function validateCheckbox() {
+  if (checkbox.checked === true) {
+    return "Read";
+  } else {
+    return "Unread";
+  }
+}
