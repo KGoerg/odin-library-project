@@ -117,6 +117,16 @@ form.addEventListener("submit", function(event) {
   createNewBook();
   console.log(myLibrary);
   }
+  if (!formTitle.validity.valid) {
+    showTitleError();
+    event.preventDefault();
+  } else if (!formAuthor.validity.valid) {
+    showAuthorError();
+    event.preventDefault();
+  } else if (!formPages.validity.valid) {
+    event.preventDefault();
+    showPagesError();
+  }
   form.reset();
 });
 
@@ -128,11 +138,42 @@ function showTitleError() {
   if (formTitle.validity.valueMissing) {
     formTitle.setCustomValidity("Please enter a book title.");
   }
+  formTitle.reportValidity();
 }
 
 formTitle.addEventListener("input", () => {
   if (!formTitle.validity.valid) {
     showTitleError();
+  }
+})
+
+function showAuthorError() {
+  formAuthor.setCustomValidity("");
+
+  if (formAuthor.validity.valueMissing) {
+    formAuthor.setCustomValidity("An author is required!");
+  }
+  formAuthor.reportValidity();
+}
+
+formAuthor.addEventListener("input", () => {
+  if (!formAuthor.validity.valid) {
+    showAuthorError();
+  }
+})
+
+function showPagesError() {
+  formPages.setCustomValidity("");
+
+  if (formPages.validity.valueMissing) {
+    formPages.setCustomValidity("Certainly a book must have at least one page?");
+  }
+  formPages.reportValidity();
+}
+
+formPages.addEventListener("input", () => {
+  if (!formPages.validity.valid) {
+    showPagesError();
   }
 })
 
